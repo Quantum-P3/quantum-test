@@ -12,8 +12,11 @@ jobs:
           name: Build
           command: mvn -B -DskipTests clean package
       - run:
-          name: Test
+          name: JUnit
           command: mvn test
+      - run:
+          name: Jest
+          command: npm run test
 
 workflows:
   sample:
