@@ -10,13 +10,10 @@ jobs:
       - checkout
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package
+          command: mvn -B -DskipTests clean package -P prod
       - run:
-          name: JUnit
-          command: mvn test
-      - run:
-          name: Jest
-          command: npm run test
+          name: Test
+          command: mvn test -P prod
 
 workflows:
   sample:
